@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    # init либо manual
+    active: init
+path:
+  download: /resources/
+  name_file: default-contacts.txt
+  is_default_download: true
+  upload: /home/alexuglin/Downloads/apps/
