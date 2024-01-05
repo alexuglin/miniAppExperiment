@@ -7,21 +7,20 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Getter
+@Setter
 @NoArgsConstructor
 @Component
 public class PathToFiles {
 
-    @Value("${path.download}")
-    private String downloadPath;
-
-    @Value("${path.upload}")
+    @Value("${files.upload.path}")
     private String uploadPath;
 
-    @Setter
-    @Value("${path.name_file}")
-    private String defaultName = "contacts";
+    @Value("${files.upload.name}")
+    private String fileNameUpload;
 
-    @Setter
-    @Value("${is_default_download}")
-    private Boolean isDefaultDownload;
+    @Value("${files.download.path}")
+    private String downloadPath;
+
+    @Value("${files.download.name_file}")
+    private String fileNameDownload;
 }

@@ -1,14 +1,18 @@
 package ru.example.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Objects;
+import java.util.StringJoiner;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class Contact {
 
     private String fullName;
@@ -26,11 +30,23 @@ public class Contact {
             return false;
         }
 
-        return !Objects.equals(phoneNumber, contact.phoneNumber) || Objects.equals(email, contact.email);
+        return Objects.equals(phoneNumber, contact.phoneNumber) || Objects.equals(email, contact.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fullName, phoneNumber, email);
+        return Objects.hash(phoneNumber, email);
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner("|")
+                .add(fullName)
+                .add(StringUtils.defaultIfBlank(phoneNumber, getAbsent("номер телефона")))
+                .add(StringUtils.defaultIfBlank(email, getAbsent("адрес электронной почты"))).toString();
+    }
+
+    private String getAbsent(String fieldName) {
+        return String.format("<%s  отсутствует>", fieldName);
     }
 }
