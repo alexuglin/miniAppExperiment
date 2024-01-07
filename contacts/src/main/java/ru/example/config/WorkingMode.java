@@ -1,4 +1,4 @@
-package ru.example.service;
+package ru.example.config;
 
 public interface WorkingMode {
 

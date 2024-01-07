@@ -1,10 +1,10 @@
 package ru.example.service.enumeration;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 @Getter
-@AllArgsConstructor
+@RequiredArgsConstructor
 public enum MessageTemplate {
 
     INVALID_DATA("Не валидное значение в поле %s"),

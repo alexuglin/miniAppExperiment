@@ -1,7 +1,7 @@
 spring:
   profiles:
     # init либо manual
-    active: init
+    active: manual
 files:
   download:
     path: home/alexuglin/Downloads/apps/

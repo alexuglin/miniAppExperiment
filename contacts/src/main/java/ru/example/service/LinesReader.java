@@ -2,9 +2,7 @@ package ru.example.service;
 
 import org.springframework.stereotype.Component;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -17,6 +15,10 @@ public class LinesReader {
         try (BufferedReader bufferedReader = new BufferedReader(reader)) {
             return getLines(bufferedReader);
         }
+    }
+
+    public List<String> get(InputStream inputStream) {
+        return getLines(new BufferedReader(new InputStreamReader(inputStream)));
     }
 
     private List<String> getLines(BufferedReader reader) {

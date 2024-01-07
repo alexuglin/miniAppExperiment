@@ -1,4 +1,4 @@
-package ru.example.service.exception;
+package ru.example.exception;
 
 public class WrongCommandException extends RuntimeException {
 

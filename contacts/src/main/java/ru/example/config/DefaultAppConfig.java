@@ -7,5 +7,5 @@ import org.springframework.context.annotation.PropertySource;
 @ComponentScan("ru.example")
 @Configuration
 @PropertySource("classpath:application.yml")
-public class DefaultConfig {
+public class DefaultAppConfig {
 }
