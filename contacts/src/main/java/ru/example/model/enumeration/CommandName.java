@@ -1,14 +1,15 @@
 package ru.example.model.enumeration;
 
-public enum NameCommand {
+public enum CommandName {
 
     ADD,
     LIST,
     FIND,
-    REMOVE,
+    DELETE,
     HELP,
     SAVE,
     LOAD,
+    UPDATE,
     EXIT
 
 

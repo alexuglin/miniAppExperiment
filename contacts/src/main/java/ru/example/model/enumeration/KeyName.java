@@ -1,9 +1,10 @@
 package ru.example.model.enumeration;
 
-public enum NameKey {
+public enum KeyName {
 
     ALL,
     EMAIL,
     PHONE,
-    NAME
+    NAME,
+    ERROR
 }
