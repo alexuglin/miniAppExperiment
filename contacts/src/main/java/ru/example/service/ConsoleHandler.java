@@ -2,9 +2,10 @@ package ru.example.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
+import ru.example.exception.InvalidDataException;
 import ru.example.exception.WrongCommandException;
-import ru.example.mapper.LinesMapper;
 import ru.example.model.Command;
+import ru.example.service.mapper.LinesMapper;
 
 import java.util.List;
 import java.util.Objects;
@@ -30,7 +31,7 @@ public class ConsoleHandler implements Handler<Command> {
             try {
                 command = linesMapper.convert(lines.get(0));
                 commandExecutor.execute(command);
-            } catch (WrongCommandException | IllegalArgumentException e) {
+            } catch (WrongCommandException | InvalidDataException e) {
                 System.out.println(e.getMessage());
             }
         } while (Objects.nonNull(command) && command.getName() == EXIT);
