@@ -30,7 +30,8 @@ public class Contact {
             return false;
         }
 
-        return Objects.equals(phoneNumber, contact.phoneNumber) || Objects.equals(email, contact.email);
+        return Objects.equals(phoneNumber, contact.phoneNumber) && Objects.equals(email, contact.email)
+                || Objects.equals(phoneNumber, contact.phoneNumber) || Objects.equals(email, contact.email);
     }
 
     @Override

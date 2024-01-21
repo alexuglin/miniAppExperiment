@@ -1,15 +1,20 @@
 package ru.example.service.enumeration;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 @Getter
-@AllArgsConstructor
+@RequiredArgsConstructor
 public enum FieldName {
 
     FULL_NAME("fullname"),
     PHONE_NUMBER("phoneNumber"),
-    EMAIL("email");
+    EMAIL("email"),
+    NAME("name"),
+    KEY("key"),
+    CONTACT("contact"),
+    OTHER_DATA("otherData");
+
 
     private final String name;
 }

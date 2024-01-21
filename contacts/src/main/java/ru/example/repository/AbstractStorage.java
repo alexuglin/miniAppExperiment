@@ -2,6 +2,7 @@ package ru.example.repository;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArraySet;
@@ -37,6 +38,11 @@ public abstract class AbstractStorage<T> implements Storage<T> {
     }
 
     @Override
+    public boolean contains(T value) {
+        return storage.contains(value);
+    }
+
+    @Override
     public boolean remove(T value) {
         return storage.remove(value);
     }
@@ -45,12 +51,19 @@ public abstract class AbstractStorage<T> implements Storage<T> {
     public boolean removeIf(Predicate<T> predicate) {
         return storage.removeIf(predicate);
     }
+
     @Override
     public long getCount() {
         return storage.size();
     }
+
     @Override
     public List<T> findBy(Pagination pagination) {
         return storage.stream().skip(pagination.getOffset() * pagination.getCount()).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<T> findAll() {
+        return new ArrayList<>(storage);
     }
 }

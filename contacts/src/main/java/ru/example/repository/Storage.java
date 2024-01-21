@@ -13,6 +13,8 @@ public interface Storage<T> {
 
     List<T> searchBy(Predicate<T> predicate);
 
+    boolean contains(T value);
+
     boolean remove(T value);
 
     boolean removeIf(Predicate<T> predicate);
@@ -20,4 +22,6 @@ public interface Storage<T> {
     long getCount();
 
     List<T> findBy(Pagination pagination);
+
+    List<T> findAll();
 }

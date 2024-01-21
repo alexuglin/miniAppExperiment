@@ -1,4 +1,4 @@
-package ru.example.validation.enumeration;
+package ru.example.service.validation.enumeration;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

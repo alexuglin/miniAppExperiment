@@ -2,5 +2,5 @@ package ru.example.repository;
 
 import ru.example.model.Contact;
 
-public class ContactStorageImpl<Contact> extends AbstractStorage<Contact>{
+public class ContactStorageImpl extends AbstractStorage<Contact> {
 }

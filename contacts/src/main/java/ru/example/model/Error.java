@@ -1,6 +1,7 @@
 package ru.example.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang3.StringUtils;
 
@@ -13,6 +14,7 @@ public class Error {
 
     private Contact contact;
 
+    @Getter
     private String message;
 
     @Override

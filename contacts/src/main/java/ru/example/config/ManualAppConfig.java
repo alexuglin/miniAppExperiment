@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import ru.example.model.Command;
-import ru.example.service.Handler;
+import ru.example.service.handler.Handler;
 
 @Configuration
 @Profile("manual")

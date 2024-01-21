@@ -1,4 +1,4 @@
-package ru.example.service;
+package ru.example.service.handler;
 
 import java.io.File;
 

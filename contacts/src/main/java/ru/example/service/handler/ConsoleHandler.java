@@ -1,10 +1,12 @@
-package ru.example.service;
+package ru.example.service.handler;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.example.exception.InvalidDataException;
 import ru.example.exception.WrongCommandException;
 import ru.example.model.Command;
+import ru.example.service.CommandExecutor;
+import ru.example.service.LinesReader;
 import ru.example.service.mapper.LinesMapper;
 
 import java.util.List;

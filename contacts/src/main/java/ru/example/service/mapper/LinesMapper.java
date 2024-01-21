@@ -11,6 +11,7 @@ import ru.example.model.enumeration.KeyName;
 
 import java.util.Set;
 
+import static ru.example.service.enumeration.MessageTemplate.COMMAND_IS_EMPTY;
 import static ru.example.service.enumeration.MessageTemplate.DATA_IS_EMPTY;
 import static ru.example.service.enumeration.MessageTemplate.INPUT_COMMAND;
 import static ru.example.service.enumeration.MessageTemplate.INVALID_FORMAT_INPUT;
@@ -22,7 +23,7 @@ public class LinesMapper {
 
     public Command convert(String value) {
         if (StringUtils.isBlank(value)) {
-            throw new WrongCommandException("Вы не ввели команду, попробуйте еще раз или воспользуйтесь HELP");
+            throw new WrongCommandException(COMMAND_IS_EMPTY);
         }
         String[] values = value.trim().split("\\s+", 2);
         String[] commandStructure = values[0].split("-+", 2);
